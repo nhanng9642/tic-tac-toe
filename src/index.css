@@ -92,7 +92,15 @@
   .mb-4 {
     margin-bottom: 4px;
   }
+
+  .nofi {
+    font-size: 15px;
+  }
   
   .red {
     color: red;
+  }
+
+  .board {
+    margin-bottom: 8px;
   }

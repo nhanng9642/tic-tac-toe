@@ -25,7 +25,7 @@ export default function Game() {
         if (move == currentStep)
             return (
                 <li key={move}>
-                    <span className="mb-4">{`You are at move #${move}` +
+                    <span className="mb-4 nofi">{`You are at move #${move}` +
                 convertLocation(locations[move])}</span>
                 </li>
             ); 
@@ -48,7 +48,6 @@ export default function Game() {
         moves = moves.reverse();
     }
 
-
     const handlePlay = (nextSquares, row, col) => {
         const newHistory = history.slice(0, currentStep + 1);
         setHistory([...newHistory, nextSquares]);
@@ -65,13 +64,14 @@ export default function Game() {
                     onPlay = {handlePlay}
                     lastStep={lastStep}
                     >
-                    </Board>
+            </Board>
+
+            <button onClick={() => setSorted(!sorted)}>Sort History</button>
 
             <div className="game-info">
                 <ol>{moves}</ol>
             </div>
 
-            <button onClick={() => setSorted(!sorted)}>Sort</button>
         </>
     )
 }
